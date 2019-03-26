@@ -1,0 +1,56 @@
+<div class="ui  container  one column centered grid">
+
+  <div class="ui one column centered grid three column row">
+  {{#link-to "developers.new"}}
+  <button class="ui blue basic  button" actions>
+      Ajouter un developpeur...
+
+  </button>
+{{/link-to}}
+
+</div>
+{{outlet}}
+<table class="ui compact blue collapsing table">
+  <thead>
+    <tr colspan="2">
+      <th> Identity</th>
+      <th></th>
+
+    </tr>
+  </thead>
+
+    <tbody>
+
+  {{#each model.devs as |dev|}}
+<tr>
+  <td> {{dev.identity}} </td>
+<td>
+    {{#link-to "developers.edit" dev class="ui icon circular basic button"}}
+      <i class="ui icon edit"></i>
+      {{/link-to}}
+  <button {{action "confirmSupp" model dev}} class="ui icon  inverted red circular button">
+    <i class="ui icon delete"></i>
+  </button>
+</td>
+</tr>
+  {{/each}}
+
+</tbody>
+</table>
+
+
+
+{{#if model.suppr}}
+<div class="ui one column centered grid three column row ">
+Voulez vous supprimer '{{model.devTmp.identity}}' ?
+{{#link-to "developers"}}
+<br><br>
+<button class="ui green button  " {{action "delete" model model.devTmp}}> <i class="check icon"></i>Confirmer </button>
+{{/link-to}}
+{{#link-to "developers"}}
+<button class="ui  red button"{{action "cancel" model}}> <i class="cancel icon"></i>Annuler </button>
+{{/link-to}}
+</div>
+{{/if}}
+
+</div>

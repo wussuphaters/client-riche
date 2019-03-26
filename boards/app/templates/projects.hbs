@@ -1,0 +1,48 @@
+
+<br>
+<div class="ui container  one column centered grid">
+{{outlet}}
+  <div class="ui two column centered grid four column row">
+  {{#link-to "projects.new"}}
+  <button class="ui blue basic  button" actions>
+      Ajouter un Projets...
+
+  </button>
+{{/link-to}}
+
+</div>
+<table class="ui compact blue collapsing table">
+  <thead>
+    <tr colspan="2">
+      <th> Nom</th>
+      <th>Descriptif</th>
+      <th>Start Date</th>
+      <th>DueDate</th>
+
+    </tr>
+  </thead>
+
+    <tbody>
+
+  {{#each model.projects as |project|}}
+<tr>
+  <td> {{project.name}} </td>
+  <td> {{project.description}} </td>
+  <td> {{ utc deserialize  project.startDate }} </td>
+  <td> {{utc deserialize project.dueDate }} </td>
+
+
+<td>
+  <!-- {{#link-to "projects" dev class="ui icon circular basic button"}}
+    <i class="ui icon edit"></i>
+    {{/link-to}}
+<button {{action "confirmSupp" model dev}} class="ui icon  inverted red circular button">
+  <i class="ui icon delete"></i>
+</button> -->
+</td>
+</tr>
+  {{/each}}
+
+</tbody>
+</table>
+</div>

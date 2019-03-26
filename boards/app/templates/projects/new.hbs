@@ -1,0 +1,35 @@
+
+<div class="ui two column four column row ">
+  <div class="ui form">
+  <div class="field">
+    <label>Nom :</label>
+    {{input value=model.copy.name type="text"}}
+  </div>
+
+  <div class="field">
+    <label>Descriptif</label>
+      {{input value=model.copy.description type="text"}}
+  </div>
+  <div class="field">
+    <label>startDate :</label>
+    {{input value=" utc serialize model.copy.startDate" type="date"}}
+
+    <label>dueDate :</label>
+    {{input value="utc serialize model.copy.dueDate" type="date"}}
+
+  </div>
+  <div class="field">
+    <label>Owner :</label>
+    <select>
+      {{#each model.devs as |dev|}}
+        <option value={{dev.identity}}>{{dev.identity}} </option>
+      {{/each}}
+    </select>
+  </div>
+  <div>
+    <button class ="user icon ui basic button blue" {{action "save" model}}>
+    <i class="ui  plus square icon"></i> Ajouter</button>
+</div>
+
+</div>
+</div>

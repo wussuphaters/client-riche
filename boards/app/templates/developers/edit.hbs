@@ -1,0 +1,9 @@
+<div class="ui one column centered grid three column row ">
+<div class="ui input ">
+  {{input  value=model.copy.identity placeholder="identity"}}
+</div>
+{{#link-to "developers"}}
+  <button class ="user icon ui basic button blue" {{action "save" model}}>Modifier</button>
+{{/link-to}}
+{{outlet}}
+</div>
