@@ -1,0 +1,40 @@
+
+<div class="ui two column four column row ">
+  <div class="ui form">
+  <div class="field">
+    <label>Nom :</label>
+    {{input value=model.copy.name type="text"}}
+  </div>
+
+  <div class="field">
+    <label>Descriptif</label>
+      {{input value=model.copy.description type="text"}}
+  </div>
+  <div class="field">
+    <label>startDate :</label>
+    {{input value=model.copy.startDate type="date"}}
+
+    <label>dueDate :</label>
+    {{input value=model.copy.dueDate type="date"}}
+
+  </div>
+  <div class="field">
+    <label>Propriétaire</label>
+    {{#ui-dropdown class="selection" selected=model.copy.owner onChange=(action (mut model.copy.owner)) as |execute mapper|}}
+      <div class="default text">{{if model.owner model.owner.identity "Propriétaire"}}</div>
+      <i class="dropdown icon"></i>
+      <div class="menu">
+        {{#each model.devs as |owner|}}
+          <div data-value="{{map-value mapper owner}}" class="item">
+            {{owner.identity}}
+          </div>
+        {{/each}}
+      </div>
+    {{/ui-dropdown}}
+  </div>
+  <div>
+    <button class ="ui button" {{action "save" model}}>Ajouter</button>
+</div>
+
+</div>
+</div>
