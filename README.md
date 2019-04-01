@@ -1,4 +1,10 @@
-# Pré-requis
+# Projet de gestion de projet
+
+
+Ce projet permet la gestion de développeurs et de projets.
+
+
+## Pré-requis
 
 
   -Installer Node JS : https://nodejs.org/download/
@@ -13,14 +19,20 @@
   -Installer Moment : ember install ember-moment
   
   
+  -Installer Bower : npm install -g bower
+  
+  
   -Installer MongoDB : Exécuter le fichier mongo+restheart.bat
   
   
   -Créer une base de données appelée boards, puis 2 collections appelées developers et projects
   
   
+  -Installation des paquets manquants : npm install || bower install
+  
+  
 
-# Lancement
+## Lancement
 
 
   -Ouvrir une console
