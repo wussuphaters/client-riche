@@ -1,6 +1,4 @@
-# Projet Ember JS
-
-Pré-requis
+# Pré-requis
 
 
   -Installer Node JS : https://nodejs.org/download/
@@ -22,7 +20,7 @@ Pré-requis
   
   
 
-Lancement
+# Lancement
 
 
   -Ouvrir une console
